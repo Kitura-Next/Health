@@ -24,7 +24,7 @@ import Dispatch
 ///### Usage Example: ###
 /// One common use case for this Swift package is to integrate it into a Kitura-based application. In the code sample below, the health of the application is exposed through the /health endpoint. Cloud environments (e.g. Cloud Foundry, Kubernetes, etc.) can then use the status information returned from the /health endpoint to monitor and manage the Swift application instance.
 ///
-/// For further information and example code see our [README](https://github.com/IBM-Swift/Health/blob/master/README.md) and the [Cloud Foundry documentation for using application health checks](https://docs.cloudfoundry.org/devguide/deploy-apps/healthchecks.html).
+/// For further information and example code see our [README](https://github.com/Kitura-Next/Health/blob/master/README.md) and the [Cloud Foundry documentation for using application health checks](https://docs.cloudfoundry.org/devguide/deploy-apps/healthchecks.html).
 ///```swift
 /// import Health
 ///
