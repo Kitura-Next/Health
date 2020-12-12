@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Health  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+    <script src="js/lunr.min.js" defer></script>
+    <script src="js/typeahead.jquery.js" defer></script>
+    <script src="js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+
+    <a title="Health  Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="index.html">
+          Health Docs
+        </a>
+         (100% documented)
+      </p>
+    
+      <p class="header-col--secondary">
+        <form role="search" action="search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="index.html">Health Reference</a>
+      <img class="carat" src="img/carat.png" />
+      Health  Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/Health.html">Health</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/StatusDateFormatter.html">StatusDateFormatter</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Enums/InvalidDataError.html">InvalidDataError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Enums/State.html">State</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Extensions/Date.html">Date</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/HealthCheck.html">HealthCheck</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/HealthProtocol.html">HealthProtocol</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs/Status.html">Status</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Typealiases.html#/s:6Health0A12CheckClosurea">HealthCheckClosure</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content top-matter">
+            
+            <p align="center">
+    <a href="http://kituranext.org/">
+        <img src="https://raw.githubusercontent.com/Kitura-Next/Kitura/master/Sources/Kitura/resources/kitura-bird.svg?sanitize=true" height="100" alt="Kitura">
+    </a>
+</p>
+
+<p align="center">
+    <a href="https://www.kituranext.org/learn/">
+    <img src="https://img.shields.io/badge/docs-kitura-1FBCE4.svg" alt="APIDoc"></a>
+    <a href="https://github.com/Kitura-Next/Health/actions?query=workflow%3ASwift+MacOS">
+    <img src="https://github.com/Kitura-Next/Health/workflows/Swift%20MacOS/badge.svg"></a>
+    <a href="https://github.com/Kitura-Next/Health/actions?query=workflow%3ASwift+Ubuntu">
+    <img src="https://github.com/Kitura-Next/Health/workflows/Swift%20Ubuntu/badge.svg"></a>
+    <img src="https://img.shields.io/badge/license-Apache2-blue.svg?style=flat" alt="Apache 2">
+    <a href="http://swift-at-ibm-slack.mybluemix.net/">
+    <img src="http://swift-at-ibm-slack.mybluemix.net/badge.svg" alt="Slack Status"></a>
+</p>
+<h1 id='health' class='heading'>Health</h1>
+
+<p>The Health package provides a basic infrastructure that Swift applications can use for reporting their overall health status.</p>
+
+<p>As an application developer, you create an instance of the <code><a href="Classes/Health.html">Health</a></code> class and then register one or more health checks. A health check can be either a closure that conforms to the <code><a href="Typealiases.html#/s:6Health0A12CheckClosurea">HealthCheckClosure</a></code> typealias or a class that conforms to the <code><a href="Protocols/HealthCheck.html">HealthCheck</a></code> protocol. Once you have your health checks in place, you can ask your <code><a href="Classes/Health.html">Health</a></code> instance for its status.</p>
+<h2 id='swift-version' class='heading'>Swift version</h2>
+
+<p>Requires <strong>Swift 5.1</strong> or newer. You can download the Swift binaries by following this <a href="https://swift.org/download/">link</a>.<br>
+Compatibility with other Swift versions is not guaranteed.</p>
+<h2 id='usage' class='heading'>Usage</h2>
+<h3 id='add-dependencies' class='heading'>Add dependencies</h3>
+
+<p>Add <code><a href="Classes/Health.html">Health</a></code> to the dependencies within your application&rsquo;s <code>Package.swift</code> file. Substitute <code>&quot;x.x.x&quot;</code> with the latest <code><a href="Classes/Health.html">Health</a></code> <a href="https://github.com/Kitura-Next/Health/releases">release</a>.</p>
+<pre class="highlight swift"><code><span class="o">.</span><span class="nf">package</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/Kitura-Next/Health.git"</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="s">"x.x.x"</span><span class="p">)</span>
+</code></pre>
+
+<p>Add <code><a href="Classes/Health.html">Health</a></code> to your target&rsquo;s dependencies:</p>
+<pre class="highlight plaintext"><code>.target(name: "example", dependencies: ["Health"]),
+</code></pre>
+<h3 id='initialize-health' class='heading'>Initialize Health</h3>
+
+<p>The example code below shows how to create a <code><a href="Classes/Health.html">Health</a></code> instance and register your health checks:</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">Health</span>
+
+<span class="k">let</span> <span class="nv">health</span> <span class="o">=</span> <span class="kt">Health</span><span class="p">()</span>
+
+<span class="c1">// Add custom checks</span>
+<span class="n">health</span><span class="o">.</span><span class="nf">addCheck</span><span class="p">(</span><span class="nv">check</span><span class="p">:</span> <span class="kt">MyCheck1</span><span class="p">())</span>
+<span class="n">health</span><span class="o">.</span><span class="nf">addCheck</span><span class="p">(</span><span class="nv">check</span><span class="p">:</span> <span class="kt">MyCheck2</span><span class="p">())</span>
+<span class="n">health</span><span class="o">.</span><span class="nf">addCheck</span><span class="p">(</span><span class="nv">check</span><span class="p">:</span> <span class="n">myClosureCheck1</span><span class="p">)</span>
+<span class="n">health</span><span class="o">.</span><span class="nf">addCheck</span><span class="p">(</span><span class="nv">check</span><span class="p">:</span> <span class="n">myClosureCheck1</span><span class="p">)</span>
+
+<span class="c1">// Get current health status</span>
+<span class="k">let</span> <span class="nv">count</span> <span class="o">=</span> <span class="n">health</span><span class="o">.</span><span class="n">numberOfChecks</span>
+<span class="k">let</span> <span class="nv">status</span><span class="p">:</span> <span class="kt">Status</span> <span class="o">=</span> <span class="n">health</span><span class="o">.</span><span class="n">status</span>
+<span class="k">let</span> <span class="nv">state</span><span class="p">:</span> <span class="kt">State</span> <span class="o">=</span> <span class="n">status</span><span class="o">.</span><span class="n">state</span>
+<span class="k">let</span> <span class="nv">dictionary</span> <span class="o">=</span> <span class="n">status</span><span class="o">.</span><span class="nf">toDictionary</span><span class="p">()</span>
+<span class="k">let</span> <span class="nv">simpleDictionary</span> <span class="o">=</span> <span class="n">status</span><span class="o">.</span><span class="nf">toSimpleDictionary</span><span class="p">()</span>
+</code></pre>
+
+<p>The simple dictionary contains a key-value pair that lets you know whether the application is UP or DOWN:</p>
+<pre class="highlight plaintext"><code>["status": "UP"]
+</code></pre>
+
+<p>The dictionary contains a key-value pair that lets you know whether the application is UP or DOWN, additional details about the health checks that failed (if any), and a Universal Time Coordinated (UTC) timestamp value:</p>
+<pre class="highlight plaintext"><code>["status": "DOWN", "timestamp": "2017-06-12T18:04:38+0000", "details": ["Cloudant health check.", "A health check closure reported status as DOWN."]]
+</code></pre>
+
+<p>Swift applications can use either dictionary, depending on the use case, to report the overall status of the application. For instance, an endpoint on the application could be defined that queries the <code><a href="Classes/Health.html">Health</a></code> object to get the overall status and then send it back to a client as a JSON payload.</p>
+
+<p>The <code><a href="Structs/Status.html">Status</a></code> structure now conforms to the <code>Codable</code> protocol, which enables you to serialize an instance of this structure and send it as a response to a client. If you use this mechanism you don&rsquo;t need to invoke either the <code>toDictionary()</code> or the <code>toSimpleDictionary()</code> methods in order to obtain the status payload for a client:</p>
+<pre class="highlight plaintext"><code>let status: Status = health.status
+let payload = try JSONEncoder().encode(status)
+// Send payload to client
+</code></pre>
+<h2 id='caching' class='heading'>Caching</h2>
+
+<p>When you create an instance of the <code><a href="Classes/Health.html">Health</a></code> class, you can pass an optional argument (named <code>statusExpirationTime</code>) to its initializer as shown next:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">health</span> <span class="o">=</span> <span class="kt">Health</span><span class="p">(</span><span class="nv">statusExpirationTime</span><span class="p">:</span> <span class="mi">30000</span><span class="p">)</span>
+</code></pre>
+
+<p>The <code>statusExpirationTime</code> parameter specifies the number of milliseconds that a given instance of <code><a href="Classes/Health.html">Health</a></code> should cache its status for before recomputing it. For instance, if the value assigned to <code>statusExpirationTime</code> is <code>30000</code> (as shown above), then 30 seconds must elapse before the <code><a href="Classes/Health.html">Health</a></code> instance computes its status again by querying each health check that has been registered. The default value for the <code>statusExpirationTime</code> parameter is <code>30000</code>.</p>
+<h2 id='implementing-a-health-check' class='heading'>Implementing a health check</h2>
+
+<p>You can implement health checks by either extending the <code><a href="Protocols/HealthCheck.html">HealthCheck</a></code> protocol or creating a closure that returns a <code><a href="Enums/State.html">State</a></code> value.</p>
+
+<p>The following snippet of code shows the implementation of a class named <code>MyCustomCheck</code>, which implements the <code><a href="Protocols/HealthCheck.html">HealthCheck</a></code> protocol:</p>
+<pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">MyCustomCheck</span><span class="p">:</span> <span class="kt">HealthCheck</span> <span class="p">{</span>
+  <span class="kd">public</span> <span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"MyCustomCheck for XYZ"</span><span class="p">}</span> <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="k">var</span> <span class="nv">description</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">"Description for MyCustomCheck..."</span><span class="p">}</span> <span class="p">}</span>
+
+  <span class="kd">public</span> <span class="kd">func</span> <span class="nf">evaluate</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">State</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">state</span><span class="p">:</span> <span class="kt">State</span> <span class="o">=</span> <span class="nf">isConnected</span><span class="p">()</span> <span class="p">?</span> <span class="kt">State</span><span class="o">.</span><span class="kt">UP</span> <span class="p">:</span> <span class="kt">State</span><span class="o">.</span><span class="kt">DOWN</span>
+    <span class="k">return</span> <span class="n">state</span>
+  <span class="p">}</span>
+
+  <span class="kd">private</span> <span class="kd">func</span> <span class="nf">isConnected</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+    <span class="o">...</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>The following snippet of code shows the implementation for a similar health check but using a closure instead:</p>
+<pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">myCustomCheck</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">State</span> <span class="p">{</span>
+  <span class="k">let</span> <span class="nv">state</span><span class="p">:</span> <span class="kt">State</span> <span class="o">=</span> <span class="nf">isConnected</span><span class="p">()</span> <span class="p">?</span> <span class="kt">State</span><span class="o">.</span><span class="kt">UP</span> <span class="p">:</span> <span class="kt">State</span><span class="o">.</span><span class="kt">DOWN</span>
+  <span class="k">return</span> <span class="n">state</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">isConnected</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+  <span class="o">...</span>
+<span class="p">}</span>
+</code></pre>
+<h2 id='using-health-in-a-kitura-application' class='heading'>Using Health in a Kitura application</h2>
+
+<p>One common use case for this Swift package is to integrate it into a Kitura-based application, as shown below:</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">Kitura</span>
+<span class="kd">import</span> <span class="kt">Foundation</span>
+
+<span class="o">...</span>
+
+<span class="c1">// Create main objects...</span>
+<span class="n">router</span> <span class="o">=</span> <span class="kt">Router</span><span class="p">()</span>
+
+<span class="n">health</span> <span class="o">=</span> <span class="kt">Health</span><span class="p">()</span>
+
+<span class="c1">// Register health checks...</span>
+<span class="n">health</span><span class="o">.</span><span class="nf">addCheck</span><span class="p">(</span><span class="nv">check</span><span class="p">:</span> <span class="kt">Microservice1Check</span><span class="p">())</span>
+<span class="n">health</span><span class="o">.</span><span class="nf">addCheck</span><span class="p">(</span><span class="nv">check</span><span class="p">:</span> <span class="n">microservice2Check</span><span class="p">)</span>
+
+<span class="o">...</span>
+
+<span class="c1">// Define /health endpoint that leverages Health</span>
+<span class="n">router</span><span class="o">.</span><span class="nf">get</span><span class="p">(</span><span class="s">"/health"</span><span class="p">)</span> <span class="p">{</span> <span class="n">request</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">next</span> <span class="k">in</span>
+  <span class="c1">// let status = health.status.toDictionary()</span>
+  <span class="k">let</span> <span class="nv">status</span> <span class="o">=</span> <span class="n">health</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="nf">toSimpleDictionary</span><span class="p">()</span>
+  <span class="k">if</span> <span class="n">health</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="o">.</span><span class="kt">UP</span> <span class="p">{</span>
+    <span class="k">try</span> <span class="n">response</span><span class="o">.</span><span class="nf">send</span><span class="p">(</span><span class="nv">json</span><span class="p">:</span> <span class="n">status</span><span class="p">)</span><span class="o">.</span><span class="nf">end</span><span class="p">()</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">try</span> <span class="n">response</span><span class="o">.</span><span class="nf">status</span><span class="p">(</span><span class="o">.</span><span class="n">serviceUnavailable</span><span class="p">)</span><span class="o">.</span><span class="nf">send</span><span class="p">(</span><span class="nv">json</span><span class="p">:</span> <span class="n">status</span><span class="p">)</span><span class="o">.</span><span class="nf">end</span><span class="p">()</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre>
+
+<p>In the code sample above, the health of the application is exposed through the <code>/health</code> endpoint. Cloud environments (e.g. Cloud Foundry, Kubernetes, etc.) can then use the status information returned from the <code>/health</code> endpoint to monitor and manage the Swift application instance.</p>
+
+<p>As an alternative to the implementation shown above for the <code>/health</code> endpoint, you can take advantage of the <code>Codable</code> protocol available in Swift 4. Since the <code><a href="Structs/Status.html">Status</a></code> struct satisfies the <code>Codable</code> protocol, a simpler implementation for the <code>/health</code> endpoint can be implemented using the new codable capabilities in Kitura 2.0 as shown below:</p>
+<pre class="highlight swift"><code><span class="o">...</span>
+
+<span class="c1">// Define /health endpoint that leverages Health</span>
+<span class="n">router</span><span class="o">.</span><span class="nf">get</span><span class="p">(</span><span class="s">"/health"</span><span class="p">)</span> <span class="p">{</span> <span class="n">request</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">next</span> <span class="k">in</span>
+  <span class="k">let</span> <span class="nv">status</span> <span class="o">=</span> <span class="n">health</span><span class="o">.</span><span class="n">status</span>
+  <span class="k">if</span> <span class="n">health</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="o">.</span><span class="kt">UP</span> <span class="p">{</span>
+    <span class="k">try</span> <span class="n">response</span><span class="o">.</span><span class="nf">status</span><span class="p">(</span><span class="o">.</span><span class="kt">OK</span><span class="p">)</span><span class="o">.</span><span class="nf">send</span><span class="p">(</span><span class="n">status</span><span class="p">)</span><span class="o">.</span><span class="nf">end</span><span class="p">()</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">try</span> <span class="n">response</span><span class="o">.</span><span class="nf">status</span><span class="p">(</span><span class="o">.</span><span class="n">serviceUnavailable</span><span class="p">)</span><span class="o">.</span><span class="nf">send</span><span class="p">(</span><span class="n">status</span><span class="p">)</span><span class="o">.</span><span class="nf">end</span><span class="p">()</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="o">...</span>
+
+</code></pre>
+
+<p>In addition to sending the dictionary response, a server needs to respond with a non-200 status code, if the health state is considered down. This can be accomplished with a status code such as 503 <code>.serviceUnavailable</code>. That way, the cloud environment can recognize the negative health response, destroy that instance of the application, and restart the application.</p>
+<h2 id='using-cloud-foundry-environment' class='heading'>Using Cloud Foundry Environment</h2>
+
+<p>If using a Cloud Foundry environment, make sure to update your <code>manifest.yml</code> to support health check. In the example above, you would set the <code>health-check-type</code> value to <code>http</code> and the <code>health-check-http-endpoint</code> to the correct health endpoint path, which is <code>/health</code> in this case. Review the <a href="https://docs.cloudfoundry.org/devguide/deploy-apps/healthchecks.html">health check documentation</a> for more details.</p>
+<h2 id='api-documentation' class='heading'>API documentation</h2>
+
+<p>For more information visit our <a href="http://kitura-next.github.io/Health/">API reference</a>.</p>
+<h2 id='community' class='heading'>Community</h2>
+
+<p>We love to talk server-side Swift and Kitura. Join our <a href="http://swift-at-ibm-slack.mybluemix.net/">Slack</a> to meet the team!</p>
+<h2 id='license' class='heading'>License</h2>
+
+<p>This library is licensed under Apache 2.0. Full license text is available in <a href="https://github.com/Kitura-Next/Health/blob/master/LICENSE.txt">LICENSE</a>.</p>
+
+          </div>
+        </section>
+
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2020 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2020-12-12)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>

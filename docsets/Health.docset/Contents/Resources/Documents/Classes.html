@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Classes  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+    <script src="js/lunr.min.js" defer></script>
+    <script src="js/typeahead.jquery.js" defer></script>
+    <script src="js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+    <a name="//apple_ref/swift/Section/Classes" class="dashAnchor"></a>
+
+    <a title="Classes  Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="index.html">
+          Health Docs
+        </a>
+         (100% documented)
+      </p>
+    
+      <p class="header-col--secondary">
+        <form role="search" action="search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="index.html">Health Reference</a>
+      <img class="carat" src="img/carat.png" />
+      Classes  Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/Health.html">Health</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/StatusDateFormatter.html">StatusDateFormatter</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Enums/InvalidDataError.html">InvalidDataError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Enums/State.html">State</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Extensions/Date.html">Date</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/HealthCheck.html">HealthCheck</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/HealthProtocol.html">HealthProtocol</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs/Status.html">Status</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Typealiases.html#/s:6Health0A12CheckClosurea">HealthCheckClosure</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content top-matter">
+            <h1>Classes</h1>
+            <p>The following classes are available globally.</p>
+
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6HealthAAC"></a>
+                    <a name="//apple_ref/swift/Class/Health" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6HealthAAC">Health</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The <code>Health</code> class provides a concrete implementation of the <code><a href="Protocols/HealthProtocol.html">HealthProtocol</a></code> protocol that
+ applications can instantiate and then register one or more health checks against. Once you
+ have your health checks in place you can ask your <code>Health</code> instance for its status.</p>
+<h3 id='usage-example' class='heading'>Usage Example:</h3>
+
+<p>One common use case for this Swift package is to integrate it into a Kitura-based application. In the code sample below, the health of the application is exposed through the /health endpoint. Cloud environments (e.g. Cloud Foundry, Kubernetes, etc.) can then use the status information returned from the /health endpoint to monitor and manage the Swift application instance.</p>
+
+<p>For further information and example code see our <a href="https://github.com/Kitura-Next/Health/blob/master/README.md">README</a> and the <a href="https://docs.cloudfoundry.org/devguide/deploy-apps/healthchecks.html">Cloud Foundry documentation for using application health checks</a>.</p>
+<pre class="highlight swift"><code> <span class="kd">import</span> <span class="kt">Health</span>
+
+ <span class="k">let</span> <span class="nv">health</span> <span class="o">=</span> <span class="kt">Health</span><span class="p">()</span>
+
+ <span class="n">health</span><span class="o">.</span><span class="nf">addCheck</span><span class="p">(</span><span class="nv">check</span><span class="p">:</span> <span class="kt">MyCheck1</span><span class="p">())</span>
+ <span class="n">health</span><span class="o">.</span><span class="nf">addCheck</span><span class="p">(</span><span class="nv">check</span><span class="p">:</span> <span class="n">myClosureCheck1</span><span class="p">)</span>
+
+ <span class="c1">// Define /health endpoint that leverages Health</span>
+ <span class="n">router</span><span class="o">.</span><span class="nf">get</span><span class="p">(</span><span class="s">"/health"</span><span class="p">)</span> <span class="p">{</span> <span class="n">request</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">next</span> <span class="k">in</span>
+    <span class="k">let</span> <span class="nv">status</span> <span class="o">=</span> <span class="n">health</span><span class="o">.</span><span class="n">status</span>
+    <span class="k">if</span> <span class="n">health</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="o">.</span><span class="kt">UP</span> <span class="p">{</span>
+        <span class="k">try</span> <span class="n">response</span><span class="o">.</span><span class="nf">status</span><span class="p">(</span><span class="o">.</span><span class="kt">OK</span><span class="p">)</span><span class="o">.</span><span class="nf">send</span><span class="p">(</span><span class="n">status</span><span class="p">)</span><span class="o">.</span><span class="nf">end</span><span class="p">()</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">try</span> <span class="n">response</span><span class="o">.</span><span class="nf">status</span><span class="p">(</span><span class="o">.</span><span class="n">serviceUnavailable</span><span class="p">)</span><span class="o">.</span><span class="nf">send</span><span class="p">(</span><span class="n">status</span><span class="p">)</span><span class="o">.</span><span class="nf">end</span><span class="p">()</span>
+    <span class="p">}</span>
+ <span class="p">}</span>
+</code></pre>
+
+                        <a href="Classes/Health.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Health</span> <span class="p">:</span> <span class="kt"><a href="Protocols/HealthProtocol.html">HealthProtocol</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Health19StatusDateFormatterC"></a>
+                    <a name="//apple_ref/swift/Class/StatusDateFormatter" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Health19StatusDateFormatterC">StatusDateFormatter</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Struct that encapsulates a <code>DateFormatter</code> implementation, specifically used by the Status struct.</p>
+
+                        <a href="Classes/StatusDateFormatter.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">StatusDateFormatter</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2020 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2020-12-12)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>
